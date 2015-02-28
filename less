@@ -1,0 +1,32 @@
+Grid.cpp: In constructor ‘Grid::Grid(unsigned int, unsigned int)’:
+Grid.cpp:4:4: error: class ‘Grid’ does not have any field named ‘m_values’
+    m_values(height*width,0),
+    ^
+Grid.cpp:5:4: error: class ‘Grid’ does not have any field named ‘m_width’
+    m_width(0),
+    ^
+Grid.cpp: In member function ‘unsigned int Grid::CoordsToIndex(unsigned int, unsigned int)’:
+Grid.cpp:11:15: error: ‘m_width’ was not declared in this scope
+    return y * m_width + x;
+               ^
+Grid.cpp: In member function ‘unsigned int Grid::IndexToX(unsigned int)’:
+Grid.cpp:15:19: error: ‘m_width’ was not declared in this scope
+    return index % m_width;
+                   ^
+Grid.cpp: In member function ‘unsigned int Grid::IndexToY(unsigned int)’:
+Grid.cpp:19:19: error: ‘m_width’ was not declared in this scope
+    return index / m_width;
+                   ^
+Grid.cpp: At global scope:
+Grid.cpp:22:16: error: prototype for ‘short unsigned int Grid::GetValue(unsigned int, unsigned int)’ does not match any in class ‘Grid’
+ unsigned short Grid::GetValue(unsigned int x, unsigned int y) {
+                ^
+In file included from Grid.cpp:1:0:
+Grid.h:6:19: error: candidate is: short unsigned int Grid::GetValue(unsigned int, unsigned int) const
+    unsigned short GetValue(unsigned int, unsigned int) const;
+                   ^
+Grid.cpp: In member function ‘void Grid::SetValue(unsigned int, unsigned int, short unsigned int)’:
+Grid.cpp:28:4: error: ‘m_values’ was not declared in this scope
+    m_values.at(CoordsToIndex(x,y)) = value;
+    ^
+make: *** [Grid.o] Error 1
