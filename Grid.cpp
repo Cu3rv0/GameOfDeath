@@ -1,5 +1,8 @@
 #include "Grid.h"
 
+using namespace std;
+
+ 
 Grid::Grid(unsigned int height, unsigned int width) :
    m_values(width,std::vector<unsigned short>(height,0)),
    m_width(width),
@@ -27,10 +30,23 @@ std::string Grid::GetGridString() const {
    return gridString;
 }
 
-unsigned int Grid::GetHeigth() const {
+unsigned int Grid::GetHeight() const {
    return m_height;
 }
 
 unsigned int Grid::GetWidth() const {
    return m_width;
+}
+
+const vector<vector<unsigned short> >& Grid::GetValues() const
+{
+   return m_values;
+}
+
+
+GridInterface& Grid::operator=(const GridInterface& rhs) 
+{
+   m_height = rhs.GetHeight();
+   m_width = rhs.GetWidth();
+   m_values = rhs.GetValues();
 }
