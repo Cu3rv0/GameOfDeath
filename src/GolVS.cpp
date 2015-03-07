@@ -1,4 +1,4 @@
-
+#include "gtest/gtest.h"
 #include <iostream>
 #include "Grid.h"
 #include "GameOfLife.h"

@@ -13,10 +13,12 @@ public:
   
    void AdvanceGeneration();
    void PrintGrid() const;
+
 private:
 
    int NeighbourSum(unsigned int xPos, unsigned int yPos) const;
 
    GridInterface& m_grid;
    GridInterface& m_lastGrid;
+   //VisualFrontEndInterface& m_visualFrontEnd;
 };

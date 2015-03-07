@@ -3,7 +3,7 @@
 using namespace std;
 
  
-Grid::Grid(unsigned int height, unsigned int width) :
+Grid::Grid(unsigned int width, unsigned int height) :
    m_values(width,std::vector<unsigned short>(height,0)),
    m_width(width),
    m_height(height)
@@ -11,7 +11,7 @@ Grid::Grid(unsigned int height, unsigned int width) :
 }
 
 unsigned short Grid::GetValue(unsigned int x, unsigned int y) const{
-  return m_values[x][y];
+  return m_values.at(x).at(y);
 }
 
 
@@ -21,8 +21,8 @@ void Grid::SetValue (unsigned int x, unsigned int y, unsigned short value){
 
 std::string Grid::GetGridString() const {
    std::string gridString;
-   for (auto x = 0; x != m_width; x++) {
-      for (auto y = 0; y != m_height; y++) {
+   for (auto y = 0; y != m_height; y++) {
+      for (auto x = 0; x != m_width; x++) {
          gridString += m_values[x][y] ? '*' : '.';
       }
       gridString += '\n';

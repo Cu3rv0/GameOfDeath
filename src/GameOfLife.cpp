@@ -46,6 +46,5 @@ int GameOfLife::NeighbourSum(unsigned int xPos, unsigned int yPos) const
          sum += m_lastGrid.GetValue(x,y);
       }
    }
-   sum -= m_lastGrid.GetValue(xPos,yPos);
    return sum;
 }
