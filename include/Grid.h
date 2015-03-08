@@ -21,7 +21,7 @@ public:
 
    GridInterface& operator=(const GridInterface& rhs);
 
-private:
+protected:
    unsigned int m_height;
    unsigned int m_width;
    std::vector<std::vector<unsigned short> > m_values;   

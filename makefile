@@ -2,7 +2,7 @@ LDFLAGS := -lpthread -lgtest -lgtest_main -lsfml-graphics -lsfml-window -lsfml-s
 CFLAGS= -std=c++14 -g
 
 MAIN= bin/GolVS.o
-OBJ= bin/Grid.o bin/GameOfLife.o bin/SFMLVisualGrid.o
+OBJ= bin/Grid.o bin/GameOfLife.o bin/SFMLVisualGrid.o bin/SingleDemo.o
 INC= -I include
 TEST= tests/tests.Grid.o tests/tests.Main.o tests/tests.GameOfLife.cpp
 
